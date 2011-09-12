@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+    var METHOD = '{{ method }}';
+</script>
+<script type="text/javascript" src="/static/js/alert.js"></script> 
+
+{% if method == 'create' %}
+    <h2 class="content_title">Create an Alert</h2>
+{% else %}
+    <h2 class="content_title">Edit an Alert</h2>
+{% end %}
+<a href="/" class="back_to_dashboard active">&laquo; Back to Dashboard</a>
+<div class="alertbirds_dashboard white_container" id="alert_container">
+
+    <form id="alert_form" method="post" action="{{ request.uri }}">
+        {{ xsrf_form_html() }}
+        <!--new alert info-->
+            <ul class="alertbirds_form">
+                <li>
+                    <div class="left_float">
+                        <div class="form_label"> 
+                        {{ form.name.label }}
+                        </div>
+                        <div class="form_element">
+                            {{ form.name }}
+                        </div>
+                    </div>
+                </li>
+                <div class="clear"></div>
+                <li>
+                    <div class="left_float">
+                        <div class="form_label"> 
+                        {{ form.description.label }}
+                        </div>
+                        <div class="form_element">
+                            {{ form.description }}
+                        </div>
+                    </div>
+
+                </li>
+                <div class="clear"></div>
+                <li>
+                    <div class="form_label"> 
+                    {{ form.saved_search.label }}
+                    <a class="question" id="endpoint_info" tooltip="This is the query that runs against your log data.">?</a>
+                    </div>
+                    <div class="form_element">
+                        <div class="left_float">
+                            {{ form.saved_search }}
+                        </div>
+                        <div class="left_float">
+                            <div class="alert_button_wrapper">
+                                <span class="modal_button" modal_width="350" modal_height="600" method="savedsearch_edit" popup="/{{ subdomain }}/savedsearch/edit/">
+                                    <a class="tertiary_button">Edit</a>
+                                </span>
+                                <span id="test_button">
+                                    <a class="secondary_button">Test</a>
+                                </span>
+                                <span id="delete_saved_search_button">
+                                    <a class="tertiary_button">Delete</a>
+                                </span>
+                                <span class="modal_button" modal_width="350" modal_height="600" method="savedsearch_create" popup="/{{ subdomain }}/savedsearch/create/">
+                                     | &nbsp; <a class="add_link active">Add New</a>
+                                </span>
+                                <div id="test_result"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </li>
+                <div class="clear"></div>
+                <li>
+                    <div class="form_label"> 
+                    {{ form.threshold_operator.label }} 
+                    </div>
+                    <div class="form_element">
+                        <div class="left_float">
+                            {{ form.threshold_operator }} 
+                        </div>
+                        <div class="left_float">
+                            {{ form.threshold_count }} 
+                        </div>
+                        <div class="left_float">
+                            <p>events in</p>
+                        </div>
+                        <div class="left_float">
+                            {{ form.threshold_time_secs }} 
+                        </div>
+                    </div>
+                </li>
+                <div class="clear"></div>
+                <li>
+                    <div class="form_label"> 
+                    {{ form.sound.label }}
+                    </div>
+                    <div class="form_element">
+                        <div class="left_float">
+                            {{ form.sound }}
+                        </div>
+                        <div class="left_float">
+                            <a class="chirp_sound"><img src="/static/images/play.png" alt="play sound" class="play_button"/></a>
+                        </div>
+                    </div>
+                </li>
+                <div class="clear"></div>
+                <li>
+                    <div class="form_label"> 
+                    {{ form.endpoint.label }}
+                    <a class="question" id="endpoint_info" tooltip="(optional) Alert Birds doesn't send out email or SMS alerts. To receive email/SMS alerts, set up an account with PagerDuty and add it as an endpoint. ">?</a>
+                    </div>
+                    <div class="form_element">
+                        <div class="left_float">
+                            {{ form.endpoint }} 
+                        </div>
+                        <div class="left_float">
+                            <div class="alert_button_wrapper">
+                                <span class="modal_button" modal_width="350" modal_height="560" method="endpoint_edit" popup="/{{ subdomain }}/endpoint/edit/">
+                                    <a class="tertiary_button">Edit</a>
+                                </span>
+                                <span class="modal_button" modal_width="350" modal_height="560" method="endpoint_create" popup="/{{ subdomain }}/endpoint/create/">
+                                    | &nbsp;<a class="add_link active">Add New</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li> 
+                <div class="clear"></div>
+                <li>
+                    <div class="form_errors status_red">
+                        {% if form.errors %}
+                            {% for field in form.errors %}
+                                {% for message in form.errors[field] %}
+                                    {{ form[field].label }}: {{ message }} <br/>
+                                {% end %}
+                            {% end %}
+                        {% end %}
+                    </div>
+                    <div class="form_button">
+                        <span class="cancel">
+                            <a class="secondary_button" href="/">Cancel</a>
+                        </span>
+                        <input type="submit" value="Submit" class="primary_button" />
+                   </div>
+                </li>
+            </ul>
+     </form>
+</div>
+
+{% end %}

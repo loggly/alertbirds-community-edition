@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    var METHOD = '{{ method }}';
+</script>
+<script type="text/javascript" src="/static/js/savedsearch.js"></script> 
+
+{% if method == 'create' %}
+    <h3 class="content_title">Create a Saved Search</h2>
+{% else %}
+    <h3 class="content_title">Edit a Saved Search</h2>
+{% end %}
+<div class="close">
+    <img src="/static/images/closebox.png">
+</div>
+
+<div class="errors status_red"> </div>
+<form id="savedsearch_form" method="POST" action="/{{ subdomain }}/api/savedsearch/{{ method }}/{{ id }}">
+    {{ xsrf_form_html() }}
+    <ul class="alertbirds_form">
+        <li>
+            <div class="form_label"> 
+                {{ form.name.label }}
+            </div>
+            <div class="form_element">
+                {{ form.name }}
+                {{ form.id }}
+            </div>
+        </li>
+        <li>
+            <div class="form_label"> 
+                {{ form.terms.label }}
+                <a id="name_info" class="question" tooltip="Enter a search query using Loggly search syntax.">?</a>
+            </div>
+            <div class="form_element">
+                {{ form.terms }}
+
+            </div>
+        </li>
+        <li>
+            <div class="form_label"> 
+                {{ form.devices.label }}
+            </div>
+            <div class="form_element">
+                {{ form.devices }}
+            </div>
+        </li>
+        <li>
+            <div class="form_label"> 
+                {{ form.inputs.label }}
+            </div>
+            <div class="form_element">
+                {{ form.inputs }}
+            </div>
+        </li>
+        <li>
+            <div class="form_button">
+                <span class="cancel_modal" >
+                    <a class="secondary_button" >Cancel</a>
+                </span>
+                <span id="submit_search" >
+                    <input type="submit" class="primary_button" value="Save" />
+                </span>
+            </div>
+        </li>
+    </ul>
+</form>
+

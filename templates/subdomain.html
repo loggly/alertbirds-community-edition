@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="content_title">Welcome to Alert Birds!</h2>
+<div class="alertbirds_dashboard white_container">
+    <form class="alertbirds_subdomain" method="POST" action="/">
+    {{ xsrf_form_html() }}
+        <ul class="alertbirds_form">
+            <li>
+                <div class="subdomain_words"> 
+                    <p>Alert Birds uses your Loggly subdomain. If you don't know the subdomain for your account, you can retrieve it by <a href="https://app.loggly.com/accounts/password/reset/">resetting your password</a>.  If you don't have an account, you can <a href="https://apps.loggly.com/pricing">signup here</a>.</p> 
+                </div>
+            </li>
+            <li>
+                <div class="subdomain_label"> 
+                    {{ form.subdomain.label }} 
+                </div>
+            </li>
+            <li>
+                <div class="clear"></div>
+                <div class="left_float">
+                    <div class="subdomain_element"> 
+                        {{ form.subdomain }}
+                    </div>
+                </div>
+                    <div class="subdomain_button">
+                        <input class="primary_button" type="submit" value="Submit">
+                    </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </form>
+</div>
+{% end %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="image_render">
+    <div class="mute_True"></div>
+    <div class="mute_False"></div>
+    <div class="alert_disable"><div></div></div>
+    <div class="alert_enable"><div></div></div>
+</div>
+<h2 class="content_title">Alert Dashboard</h2>
+<div class="alertbirds_dashboard white_container">
+
+    <div class="alertbirds_alerts">
+        <div class="scrolltable">
+            <table class="dashboard_table" rules="rows">
+                <tr>
+                    <th class="alert_state"></th>
+                    <th class="alert_name">Alert</th>
+                    <th class="alert_status">Enable</th>
+                    <th class="alert_sound">Sound</th>
+                    <th class="loggly_view"></th>
+                    <th class="alert_remove"></th>
+                </tr>
+                {% if alerts.count() == 0 %}
+                    <tr>
+                        <td colspan=6>
+                            You don't have any alerts configured yet.  Click below to get started.
+                        </td>
+                    </tr>
+                {% else %}
+                    {% for alert in alerts %}
+                        <tr id="{{ alert.key() }}">
+                            <td class="alert_state_{{ alert.state }}" id="state_{{ alert.key() }}" ></td>
+                            <td class="alert_name"><a href="/{{ subdomain }}/alert/edit/{{ alert.key() }}">{{ escape(alert.name)[0:25] }}</a></td>
+                            <!-- <td class="alert_expand"><div class="dropdown_closed" expand="info_{{ alert.key() }}"></div></td> -->
+                            {% if alert.active %}
+                                <td class="alert_disable"><div href="javascript:void 0;"></div></td>
+                            {% else %}
+                                <td class="alert_enable"><div href="javascript:void 0;"></div></td>
+                            {% end %}
+                            <td class="alert_sound"><div class="mute_{{ alert.muted }}" sound="{{ alert.key() }}"></div></td>
+                            <td class="loggly_view"><a href="javascript: void 0;" class="active">Run Search &raquo;</a></td>
+                            <td class="alert_remove"><a class='delete_alert' href="/{{ subdomain }}/api/alert/delete/{{ alert.key() }}"><img class="alert_remove_button" src="/static/images/closebox.png"></a></td>
+                        </tr>
+                      <!--  <tr>
+                            <td colspan="8" class="alert_info_wrapper" id="info_{{ alert.key() }}">
+                                <table class="alert_info" frame="below" rules="rows">
+                                    <td colspan="4">In this state since: {{ datetime.datetime.fromtimestamp(int(alert.last_state_change)).strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                                    <tr>
+                                        <th>Inputs</th>
+                                        <th>Events</th>
+                                        <th>Devices</th>
+                                        <th>Events</th>
+                                    </tr>
+                                    <tr>
+                                        <td>prod db</td>
+                                        <td>{{ alert.threshold_count }}</td>
+                                        <td>10.10.4.1</td>
+                                        <td>{{ alert.threshold_count }}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr> -->
+                    {% end %}
+                {% end %}
+            </table>
+        </div>
+
+
+    </div>
+    <a href="/{{ subdomain }}/alert/create" class="primary_button" >Add Alert</a>
+
+</div>
+{% end %}
+

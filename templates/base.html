@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
+    <title>Alert Birds</title>
+
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/alertbirds.css" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/growl.css" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/rainbows.css" /> 
+
+    <!-- base initscripttags --> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="/static/js/jquery.multiselect.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.ui.selectmenu.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.qtip-1.0.0-rc3.min.js"></script>
+    <script type="text/javascript" src="/static/js/pusher.min.js"></script>
+    <script type="text/javascript" src="/static/js/md5-min.js"></script>
+    <script type="text/javascript" src="/static/js/flash_detect_min.js"></script>
+    <script type="text/javascript" src="/static/js/fbd.js"></script>
+    <script type="text/javascript" src="/static/js/soundmanager2.js"></script>
+    <script type="text/javascript" src="/static/js/json.js"></script>
+    <script type="text/javascript" src="/static/js/growl.js"></script>
+    <script type="text/javascript" src="/static/js/alertbirds.js"></script> 
+    <!-- end base initscripttags --> 
+</head>
+<body>
+<div class="disco">You have discovered DISCO MODE!!  Click around Alert Birds and party like it's 1999!  alt+shift will bring you back to normal mode.</div>
+    <div id="modal_div"><img class="loading_img" src="/static/images/loading.gif" /></div>
+    <div class="header_wrapper">
+        <div class="header">
+            <div class="logo">
+	    <a href="/"><img src="/static/images/alertbirds_logo.png" class ="alert_logo" alt="Alert Birds"/><span class="beta">beta</span></a>
+            </div>
+            <ul class="auth-nav">
+                <li>
+                    <a target='blank' href="http://wiki.loggly.com/alertbirds">help</a>
+	            </li>
+	            <li>
+		            <a href="{{ LOGOUT_URL }}">logout</a>
+	            </li>
+	        </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <!-- pixel logging! -->
+    <img class="pixel" src="{{ TRACKING_INPUT_URL }}">
+    <div class="content-centered">
+        <div class="content">
+           {% block content %}
+           {% end %}
+            <div class="alert_bubble">
+                <div class="close_bubble">
+                    <img src="/static/images/closebox.png">
+                </div>
+                <div class="alert_description_wrapper">
+                    <div class="alert_title">Alert!</div> 
+                    <div class="alert_description"><br/></div>
+                </div>
+                <div class="first_login_wrapper">
+                    <div id="first_login">
+                        <h2>Welcome to Alert Birds!</h2>
+                        <p>A few alerts have already been set up for you.  If you want to recieve messaging or modify the sounds, edit each alert.</p>
+                    </div>
+                </div>
+                <div class="fail_wrapper">
+                    <div class="fail_header"></div>
+                    <div class="fail_message"></div>
+                </div>
+            </div>
+        </div><!--closes main content align left-->
+        <div class="footer_birds">
+            <img src="/static/images/footer_birds.png">
+        </div> 
+        <div class="footer_tree">
+        </div>
+        <div class="footer_wrapper">
+            <ul class="footer_links">
+	            <li>
+	                <a href="http://loggly.com/terms/">Terms of Use</a>
+		        </li>
+		        <li>
+		            <a href="http://loggly.com/privacy/">Privacy Policy</a>
+		        </li>
+	            <li>	    
+                    <a href="http://loggly.com/careers/">Careers</a>
+                </li>
+	            <li>
+	                <a href="http://loggly.com/support/">Support</a>
+	            </li>
+		        <li>
+	                powered by <a href="http://www.loggly.com"><img src="/static/images/loggly_logo.png" alt="Loggly" class="loggly_logo"></a>
+		        </li>
+		        <li class="social_media"><a href="http://www.twitter.com/loggly" class="social_media_link"><img src="/static/images/twitter_icon.png" /><a href="http://www.facebook.com/loggly" class="social_media_link"><img src="/static/images/facebook_icon.png" /></a><a href="http://feeds.feedburner.com/LogglyByHoover" class="social_media_link"><img src="/static/images/rss_icon.png" /></a></li>
+            </ul>
+		    <div class="clear"></div>
+        </div><!--closes footer wrapper-->
+    </div><!--closes centering div-->
+        
+</body>
+
+</html>

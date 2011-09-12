@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
+    <title>Alert Birds</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/alertbirds.css" /> 
+
+    <!-- base initscripttags --> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+    <script type="text/javascript" src="/static/js/jquery.qtip-1.0.0-rc3.min.js"></script>
+    <!-- end base initscripttags --> 
+</head>
+<body>
+    <div class="login_button" id="login">
+        <a href="{{ login_url }}">Login</a>
+    </div>
+    <div class="clear"></div>
+    <div class="content-centered">
+        <div class="content">
+            <div class="splash_info">
+                <img class="splash_logo" src="/static/images/alertbirds_logo_large.png"/>
+                <div class="intro_info" id="intro_started">
+                   <p> We squawk, chirp and sing to let you know when something is up with your systems.  Here's how to get started: </p>  
+                </div>
+                <div class="intro_info">
+                    <div class="left_float">
+                        <img src="/static/images/step1.png" />
+                    </div>
+                    <div class="left_float">
+                        <div class="intro_words">
+                            <h2> Get your logs into Loggly </h2>
+                            <p>You'll need data before you can use Alert Birds.  Go to <a href="http://www.loggly.com">loggly.com</a> to set up your data inputs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="intro_info">
+                    <div class="left_float">
+                        <img src="/static/images/step2.png" />
+                    </div>
+                    <div class="left_float">
+                        <div class="intro_words">
+                            <h2> Search for events you care about </h2>
+                            <p> Perform a search on Loggly and save it, or you can set up the search parameters on alertbirds.com </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+                <div class="intro_info">
+                    <div class="left_float">
+                        <img src="/static/images/step3.png" />
+                    </div>
+                    <div class="left_float">
+                        <div class="intro_words">
+                            <h2> Set up alerts </h2>
+                            <p> From your Alert Birds dashboard, customize the existing alerts or add your own. </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div><!--closes main content align left-->
+        <div class="footer_birds">
+            <img src="/static/images/footer_birds.png">
+	</div> 
+	<div class="footer_tree">
+	</div>
+        <div class="footer_wrapper">
+            <ul class="footer_links">
+	         <li>
+	             <a href="http://loggly.com/terms/">Terms of Use</a>
+		 </li>
+		 <li>
+		     <a href="http://loggly.com/privacy/">Privacy Policy</a>
+		 </li>
+	        <li>	    
+                    <a href="http://loggly.com/careers/">Careers</a>
+                </li>
+	        <li>
+	            <a href="http://loggly.com/support/">Support</a>
+	        </li>
+		<li>
+	            powered by <a href="http://www.loggly.com"><img src="/static/images/loggly_logo.png" alt="Loggly" class="loggly_logo"></a>
+		</li>
+		  
+		<li class="social_media"><a href="http://www.twitter.com/loggly" class="social_media_link"><img src="/static/images/twitter_icon.png" /><a href="http://www.facebook.com/loggly" class="social_media_link"><img src="/static/images/facebook_icon.png" /></a><a href="http://feeds.feedburner.com/LogglyByHoover" class="social_media_link"><img src="/static/images/rss_icon.png" /></a></li>
+            </ul>
+		    <div class="clear"></div>
+               
+           </div><!--closes footer wrapper-->
+        </div><!--closes centering div-->
+        
+</body>
+
+</html>

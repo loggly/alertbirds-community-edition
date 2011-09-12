@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="content-centered">
+        <div class="content">
+            <div class="nodata_info">
+                <div class="intro_info" id="nodata_started">
+                   <h2>Howdy!  It looks like you haven't set up your Loggly account to send us any data.  Here's how to get started: </p>  
+                </div>
+                <div class="intro_info">
+                    <div class="left_float">
+                        <img src="/static/images/step1.png" />
+                    </div>
+                    <div class="left_float">
+                        <div class="intro_words">
+                            <h2> Get your logs into Loggly </h2>
+                            <p>You'll need data before you can use Alert Birds.  Go to <a href="http://{{ subdomain}}.loggly.com">{{ subdomain }}.loggly.com</a> to set up your data inputs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="intro_info">
+                    <div class="left_float">
+                        <img src="/static/images/step2.png" />
+                    </div>
+                    <div class="left_float">
+                        <div class="intro_words">
+                            <h2> Search for events you care about </h2>
+                            <p> Perform a search on Loggly and save it, or you can set up the search parameters on alertbirds.com </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+                <div class="intro_info">
+                    <div class="left_float">
+                        <img src="/static/images/step3.png" />
+                    </div>
+                    <div class="left_float">
+                        <div class="intro_words">
+                            <h2> Set up alerts </h2>
+                            <p> From your Alert Birds dashboard, customize the existing alerts or add your own. </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% end %}

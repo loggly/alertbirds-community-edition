@@ -1,0 +1,68 @@
+<script type="text/javascript">
+    var METHOD = '{{ method }}';
+</script>
+<script type="text/javascript" src="/static/js/endpoint.js"></script> 
+
+{% if method == 'create' %}
+    <h3 class="content_title">Create an Endpoint</h2>
+{% else %}
+    <h3 class="content_title">Edit an Endpoint</h2>
+{% end %}
+
+<div class="close">
+        <img src="/static/images/closebox.png">
+</div>
+
+<div class="errors status_red"> </div>
+<form id="endpoint_form" method="POST" action="/{{ subdomain }}/api/endpoint/{{ method }}/{{ endpoint_id }}">
+    {{ xsrf_form_html() }}
+    <!--new alert info-->
+    <ul class="alertbirds_form">
+        <li>
+            <div class="form_label">
+            {{ form.provider.label }}
+            <a class="question" id="endpoint_info" tooltip="(optional) Alert Birds doesn't send out email or SMS alerts.  PagerDuty is available as an escalation service.">?</a>
+            </div>
+            <div class="form_element">
+                {{ form.provider }} 
+            </div>
+        </li> 
+        <li>
+            <div class="form_label">
+            {{ form.description.label }}
+            </div>
+            <div class="form_element">
+                {{ form.description }}
+            </div>
+        </li>
+        <li>
+            <div class="form_label">
+            {{ form.service_key.label }}
+            <a id="servicekey_info" class="question" tooltip="Generate a service key for Alert Birds in Pager Duty and use it here to trigger your Pager Duty alerts.">?</a>
+            </div>
+            <div class="form_element">
+                {{ form.service_key }}
+            </div>
+        </li>
+        <li>
+            <div class="form_label">
+                {{ form.alert_text.label }}
+                <a id="description_info" class="question" tooltip="Alert details sent to Pager Duty.">?</a>
+            </div>
+            <div class="form_element">
+                {{ form.alert_text }}
+            </div>
+        </li>
+        <li>
+            <div class="form_button">
+                <span class="cancel_modal" >
+                    <a class="secondary_button">Cancel</a>
+                </span>
+                <span id="submit_endpoint" >
+                    <input type="submit" class="primary_button" value="Save">
+                </span>
+            </div>
+        </li>
+    </ul>
+</form>
+

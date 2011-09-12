@@ -1,0 +1,48 @@
+cron:
+- url:/0
+  schedule: every 1 minutes
+
+- url:/1
+  schedule: every 1 minutes
+
+- url:/2
+  schedule: every 1 minutes
+
+- url:/3
+  schedule: every 1 minutes
+
+- url:/4
+  schedule: every 1 minutes
+
+- url:/5
+  schedule: every 1 minutes
+
+- url:/6
+  schedule: every 1 minutes
+
+- url:/7
+  schedule: every 1 minutes
+
+- url:/8
+  schedule: every 1 minutes
+
+- url:/9
+  schedule: every 1 minutes
+
+- url:/a
+  schedule: every 1 minutes
+
+- url:/b
+  schedule: every 1 minutes
+
+- url:/c
+  schedule: every 1 minutes
+
+- url:/d
+  schedule: every 1 minutes
+
+- url:/e
+  schedule: every 1 minutes
+
+- url:/f
+  schedule: every 1 minutes

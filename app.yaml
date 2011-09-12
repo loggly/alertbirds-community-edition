@@ -1,0 +1,26 @@
+application: alertbirds
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static/images
+  static_dir: static/images
+- url: /static/css
+  static_dir: static/css
+- url: /static/js
+  static_dir: static/js
+- url: /static/sounds
+  static_dir: static/sounds
+- url: /favicon\.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon\.ico 
+- url: /cron/.*
+  script: alertbirds.py
+- url: /
+  script: alertbirds.py
+  secure: always
+- url: /.*
+  script: alertbirds.py
+  login: required
+  secure: always
