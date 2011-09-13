@@ -1,5 +1,4 @@
-This is the Community Edition of Alert Birds.  We took out the secrets/apikeys etc that we used so you will want to insert your own
-for your version of this code to work.  The two locations this information was changed are in /cron.yaml and etc/contrib.py
+This is the Community Edition of Alert Birds.  We took out the secrets/apikeys etc that we used so you will want to insert your own for your version of this code to work.  The two locations this information was changed are in /cron.yaml and etc/contrib.py
 
 happy coding!
 
