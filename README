@@ -1,3 +1,11 @@
+This is the Community Edition of Alert Birds.  We took out the secrets/apikeys etc that we used so you will want to put your own in
+for your version of this code to work.  The two locations this information was changed are in /cron.yaml and etc/contrib.py
+
+happy coding!
+
+======================================
+
+
 Alert Birds
 Alert Birds is Loggly's alerting and monitoring app, but just as importantly, it's the reference app for developers. We'll get into what that means for app developers in a little bit, but first, let's cover the basics of what Alert Birds does.
 
