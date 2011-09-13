@@ -12,11 +12,11 @@ Long story short, Alert Birds runs your Loggly saved searches and notifies you w
 
 ###There are three major components:
 
-1. Alerts, which will fire from a cron job that runs at an interval you select.
-2. Saved searches, which are stored on Loggly, and get attached to alerts. They're the search query itself, plus the inputs and devices you've chosen to search against.
-3. Endpoints, which is really 'endpoint', because it consists entirely of PagerDuty support for the moment. If an alert fires, you can have Alert Birds trigger an alert in PagerDuty, which then can call or SMS you so that your significant other will be annoyed.
+1. [Alerts](http://wiki.loggly.com/alertbirds#alerts), which will fire from a cron job that runs at an interval you select.
+2. [Saved searches](http://wiki.loggly.com/alertbirds#saved_searches), which are stored on Loggly, and get attached to alerts. They're the search query itself, plus the inputs and devices you've chosen to search against.
+3. [Endpoints](http://wiki.loggly.com/alertbirds#endpoints), which is really 'endpoint', because it consists entirely of PagerDuty support for the moment. If an alert fires, you can have Alert Birds trigger an alert in PagerDuty, which then can call or SMS you so that your significant other will be annoyed.
 
-*A sample check might be to check whether (ERROR OR WARN) NOT 404 happens more than 10 times in 5 minutes.*
+*A sample check might be to check whether **(ERROR OR WARN) NOT 404** happens more than 10 times in 5 minutes.*
 
 If an alert is in a critical state, the cron will check its status every minute instead of the interval you selected, until either the issue goes away, or you disable it and go back to bed.
 
@@ -30,15 +30,15 @@ If an alert is in a critical state, the cron will check its status every minute 
 ###Developers, Developers, Developers
 As mentioned above, Alert Birds is intended to be the app that developers can use as a reference when developing against Loggly's APIs. To that end, we used as many third-party tools as possible to make it as non-Loggly-centric as possible. 
 ####A partial list of the tools and technologies we used include:
-* Google App Engine
-* Google authentication
-* OAuth (against loggly.com)
-* Tornado
-* jQuery
-* Pusher
-* PagerDuty
-* SoundManager2
-* WTForms
+* [Google App Engine](http://code.google.com/appengine/)
+* [Google authentication](http://code.google.com/apis/accounts/docs/AuthForWebApps.html)
+* [OAuth](http://code.google.com/apis/accounts/docs/OAuth.html) (against loggly.com)
+* [Tornado](http://www.tornadoweb.org/)
+* [jQuery](http://jquery.com/)
+* [Pusher](http://pusher.com/)
+* [PagerDuty](http://www.pagerduty.com/)
+* [SoundManager2](http://www.schillmania.com/projects/soundmanager2/)
+* [WTForms](http://wtforms.simplecodes.com/)
 
 and it's written in Python and JavaScript.  
 
