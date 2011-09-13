@@ -2,13 +2,13 @@
 
 This is the Community Edition of Alert Birds.  We took out the secrets/apikeys etc that we used so you will want to insert your own for your version of this code to work.  
 ####The two locations this information was changed are in 
-* /cron.yaml
+* cron.yaml
 * etc/contrib.py
 
 ###Getting Started:
 The first thing you'll need in order to run Alert Birds is [Google App Engine](http://code.google.com/appengine/).  
 Once [Google App Engine](http://code.google.com/appengine/) is installed, you need to clone the Alert Birds repo and point the Google App Engine Launcher to the Alert Birds root folder.
-We store the secrets/api keys in the etc/config.py file.  
+We store the secrets/api keys in the **etc/config.py** file.  
 ####You'll want to generate the appropriate keys and secrets for
 * [OAuth](http://code.google.com/apis/accounts/docs/OAuth.html)
 * [Pusher](http://pusher.com/docs/javascript_quick_start)
