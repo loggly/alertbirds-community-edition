@@ -42,25 +42,6 @@
                             <td class="loggly_view"><a href="javascript: void 0;" class="active">Run Search &raquo;</a></td>
                             <td class="alert_remove"><a class='delete_alert' href="/{{ subdomain }}/api/alert/delete/{{ alert.key() }}"><img class="alert_remove_button" src="/static/images/closebox.png"></a></td>
                         </tr>
-                      <!--  <tr>
-                            <td colspan="8" class="alert_info_wrapper" id="info_{{ alert.key() }}">
-                                <table class="alert_info" frame="below" rules="rows">
-                                    <td colspan="4">In this state since: {{ datetime.datetime.fromtimestamp(int(alert.last_state_change)).strftime('%Y-%m-%d %H:%M:%S') }}</td>
-                                    <tr>
-                                        <th>Inputs</th>
-                                        <th>Events</th>
-                                        <th>Devices</th>
-                                        <th>Events</th>
-                                    </tr>
-                                    <tr>
-                                        <td>prod db</td>
-                                        <td>{{ alert.threshold_count }}</td>
-                                        <td>10.10.4.1</td>
-                                        <td>{{ alert.threshold_count }}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr> -->
                     {% end %}
                 {% end %}
             </table>
